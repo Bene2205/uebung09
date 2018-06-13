@@ -1,22 +1,15 @@
 package ueb09.fz;
 
-public class Auto {
-	private String hersteller;
-	private String modell;
-	private int ps;
+public class Auto  extends MitMotor{
 	private int hubraum;
-	private int tankvolumen;
 	private int zulGesamtGewicht;
 	private int sitze;
 	private int tueren;
 	private Scheibenbremse[] bremsen;
 
 	public Auto(String hersteller, String modell, int ps, int hubraum, int tankvolumen, int sitze, int tueren, int zulGesamtGewicht) {
-		this.hersteller = hersteller;
-		this.modell = modell;
-		this.ps = ps;
+		super(hersteller, modell, ps, tankvolumen);
 		this.hubraum = hubraum;
-		this.tankvolumen = tankvolumen;
 		this.sitze = sitze;
 		this.zulGesamtGewicht = zulGesamtGewicht;
 
@@ -29,10 +22,9 @@ public class Auto {
 	}
 
 	public String toString() {
-		return "Ich bin ein " + hersteller + " " + modell + " mit "
-				+ ps + " PS, "
+		return super.getType()
+				+ getTypeInfo()
 				+ hubraum + " Hubraum, "
-				+ tankvolumen + " Tankvolumen, "
 				+ sitze + " Sitzen, "
 				+ tueren + " Türen, "
 				+ bremsen.length + " " + bremsen[0].toString()
